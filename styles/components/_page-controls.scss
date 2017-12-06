@@ -1,0 +1,146 @@
+.paginator {
+	@include distancing(40px);
+
+	ul {
+		@include list-reset;
+		display: flex;
+		justify-content: center;
+
+		li {
+			text-align: center;
+			border: 1px solid $border;
+
+			+ li {
+				border-left: 0 none;
+			}
+		}
+	}
+
+	a {
+		display: block;
+		@include link-reset;
+		min-width: 48px;
+		padding: 13px 4px;
+		color: #666;
+
+		&:hover {
+			background-color: $bg;
+		}
+
+		&.current {
+			background-color: $brand;
+			color: $white;
+		}
+	}
+
+}
+
+.breadcrumbs {
+	@include distancing-ready;
+	@include distancing(28px);
+	@include distancing(0, top, '.article-meta');
+	@include distancing(28px !important, bottom, 'h1');
+	cursor: default;
+	color: $white;
+	font-size: 12px;
+	line-height: 18px;
+	text-transform: uppercase;
+
+	ul {
+		display: flex;
+		flex-wrap: wrap;
+		@include list-reset(true);
+	}
+
+	li {
+		padding-right: 35px;
+		padding-top: 4px;
+		padding-bottom: 4px;
+		background-image: url(../images/icons-vector/arrow-3.svg);
+		background-position: calc(100% - 10px) calc(50% - 1px);
+		background-repeat: no-repeat;
+
+		&:last-child {
+			padding-right: 0;
+			background-image: none;
+		}
+	}
+
+	a {
+		color: $white;
+	}
+}
+
+.page-link {
+	@include link-reset;
+	display: block;
+
+	&__title {
+		font-weight: bold;
+		font-size: 22px;
+		line-height: 28px;
+		display: block;
+		margin-bottom: 6px;
+	}
+
+	.icon {
+		display: block;
+		width: 42px;
+		height: 32px;
+	}
+
+	&:hover {
+		color: $yellow;
+		fill: $yellow;
+	}
+
+	&--prev {
+		.icon {
+			transform: rotate(180deg);
+		}
+	}
+
+	&--next {
+		text-align: right;
+		.icon {
+			margin-left: auto;
+		}
+	}
+
+	// screen sm down
+	@include media-breakpoint-down(sm) {
+		text-align: left;
+		max-width: 320px;
+
+		.icon {
+			margin-left: 0;
+		}
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		&__title {
+			margin-bottom: 8px;
+			font-size: 24px;
+			line-height: 34px;
+		}
+	}
+
+	// screen lg up
+	@include media-breakpoint-up(lg) {
+		&__title {
+			margin-bottom: 12px;
+			font-size: 26px;
+			line-height: 36px;
+		}
+	}
+
+	// screen xl up
+	@include media-breakpoint-up(xl) {
+		&__title {
+			margin-bottom: 12px;
+			font-size: 30px;
+			line-height: 42px;
+		}
+	}
+}

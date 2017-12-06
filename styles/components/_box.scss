@@ -1,0 +1,41 @@
+.box {
+	@include distancing-ready;
+	padding: 70;
+}
+
+.box--lg {
+	@include distancing(40px);
+	padding: 20px $grid-gutter-width / 2;
+
+	// screen xs down
+	@include media-breakpoint-down(xs) {
+		margin-left: -$grid-gutter-width / 2;
+		margin-right: -$grid-gutter-width / 2;
+	}
+
+	// screen sm up
+	@include media-breakpoint-up(sm) {
+		padding: 30px;
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		@include distancing(45px);
+		padding: 45px;
+	}
+
+	// screen lg up
+	@include media-breakpoint-up(lg) {
+		@include distancing(55px);
+		padding: 52px 57px;
+	}
+
+	// screen xl up
+	@include media-breakpoint-up(xl) {
+		padding: 58px 65px;
+	}
+}
+
+.box--dark {
+	background-color: #28272a;
+}

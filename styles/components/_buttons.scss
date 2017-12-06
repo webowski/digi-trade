@@ -1,0 +1,233 @@
+$button-default-color: 									$brand;
+$button-default-text-color: 						$white;
+
+$button-primary-color: 									$brand;
+$button-primary-text-color: 						$white;
+
+$button-inverse-color: 									$white;
+$button-inverse-text-color: 						$intense;
+
+$button-brand-color: 										$brand;
+$button-brand-text-color: 							$white;
+
+$button-dim-color: 											transparent;
+$button-dim-text-color: 								$intense;
+
+$button-brand-inverse-color: 						$white;
+$button-brand-inverse-text-color: 			$brand;
+
+$button-accent-color: 									$yellow;
+$button-accent-text-color: 							$intense;
+
+$button-border-radius: 									$border-radius;
+
+
+.button {
+	padding: 15px 22px;
+	position: relative;
+	display: inline-block;
+	background-repeat: no-repeat;
+	background-color: $button-default-color;
+	border: 0 none;
+	color: $button-default-text-color;
+	font-size: $base-font-size;
+	line-height: $base-line-height - 4px;
+	font-weight: 700;
+	font-family: $font-main;
+	border-radius: $button-border-radius;
+	cursor: pointer;
+	transition: 
+		background-color .2s ease, 
+		background-position .3s ease-in-out,
+		color .2s ease, 
+		border-color .2s ease, 
+		opacity .2s ease, 
+		box-shadow .15s ease,
+		transform .15s ease;
+	text-decoration: none;
+	text-align: center;
+	vertical-align: middle;
+	text-transform: uppercase;
+	box-shadow: 0 26px 34px rgba(0, 0, 0, 0.12);
+
+	&:hover {
+		background-color: lighten($brand, 8);
+		color: $white;
+		text-decoration: none;
+		box-shadow: 0 26px 34px rgba(0, 0, 0, 0.12);
+	}
+
+	&:active {
+		box-shadow: 0 18px 26px rgba(0, 0, 0, 0.12);
+		transform: translateY(3px);
+	}
+
+	&:focus {
+		outline: none;
+	}
+}
+
+.button-xs {
+	padding: 10px 17px;
+	font-size: 12px;
+	line-height: 18px;
+	font-weight: normal;
+}
+
+.button-sm {
+	padding: 14px 15px;
+	font-size: 15px;
+	line-height: 20px;
+}
+
+.button-md {
+
+}
+
+.button-lg {
+	padding: 12px 16px;
+	font-size: 10px;
+	line-height: $base-line-height - 4px;
+	box-shadow: 0 35px 40px rgba(0, 0, 0, 0.15);
+
+	&:hover {
+		box-shadow: 0 35px 40px rgba(0, 0, 0, 0.15);
+	}
+
+	&:active {
+		box-shadow: 0 25px 32px rgba(0, 0, 0, 0.15);
+		transform: translateY(4px);
+	}
+
+	// screen sm up
+	@include media-breakpoint-up(sm) {
+		font-size: 13px;
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		padding: 34px 28px;
+		font-size: 16px;
+		letter-spacing: 1px;
+	}
+}
+
+.button-xl {
+	padding: 18px 20px;
+	font-size: 10px;
+	line-height: $base-line-height - 4px;
+	box-shadow: 0 35px 40px rgba(0, 0, 0, 0.15);
+
+	&:hover {
+		box-shadow: 0 35px 40px rgba(0, 0, 0, 0.15);
+	}
+
+	&:active {
+		box-shadow: 0 25px 32px rgba(0, 0, 0, 0.15);
+		transform: translateY(4px);
+	}
+
+	// screen sm up
+	@include media-breakpoint-up(sm) {
+		font-size: 14px;
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		padding: 50px 37px;
+		font-size: 18px;
+		letter-spacing: 1px;
+	}
+}
+
+.button-block {
+	display: block;
+	width: 100%;
+}
+
+.button-primary {
+	background-color: $button-primary-color;
+	color: $button-primary-text-color;
+
+	&:hover {
+		background-color: lighten($button-primary-color, 8);
+		color: $button-primary-text-color;
+	}
+}
+
+.button-accent {
+	background-color: $button-accent-color;
+	color: $button-accent-text-color;
+	background-image: linear-gradient(-45deg, 
+		lighten(#d12020, 11) 0%,
+	  lighten($button-accent-color, 11) 33.33%, 
+	  transparent 66.66%, 
+	  transparent 100%
+	);
+	background-size: 300% 300%;
+	background-position: 0% 0%;
+
+	&:hover {
+		background-color: $button-accent-color;
+		color: $button-accent-text-color;
+		background-position: 100% 100%;
+	}
+}
+
+
+.button-inverse {
+	background-color: $button-inverse-color;
+	border-color: transparent;
+	color: $button-inverse-text-color;
+
+	&:hover {
+		background-color: $button-inverse-color;
+		border-color: $button-inverse-color;
+		color: $button-inverse-text-color;
+	}
+
+	background-image: linear-gradient(-45deg, 
+		lighten($red, 11) 0%,
+	  lighten($white, 11) 33.33%, 
+	  transparent 66.66%, 
+	  transparent 100%
+	);
+	background-size: 300% 300%;
+	background-position: 0% 0%;
+
+	&:hover {
+		background-color: $button-inverse-color;
+		color: $button-accent-text-color;
+		background-position: 100% 100%;
+	}
+}
+
+.button-gradient {
+	background-repeat: no-repeat;
+	background-image: linear-gradient(-225deg, #FF3CAC 0%, #FF3CAC 50%, #562B7C 76%, #2B86C5 100%);
+	background-size: 200% 200%;
+	background-position: 100% 100%;
+	color: $white;
+
+	&:hover {
+		background-position: 60% 60%;
+	}
+}
+
+.button-tag {
+	text-transform: none;
+	background-color: $white;
+	box-shadow: none;
+	color: rgba($black, .7);
+	font-weight: normal;
+
+	&:hover {
+		box-shadow: none;
+	}
+
+	&.is-selected {
+		background-color: $yellow;
+		color: rgba($black, .7);
+		box-shadow: none;
+	}
+}

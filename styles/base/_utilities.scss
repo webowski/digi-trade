@@ -1,0 +1,114 @@
+.visually-hidden {
+	@include distancing-ready;
+	@include distancing(0 !important, bottom);
+	width: 1px;
+	height: 1px;
+	margin: -1px;
+	position: absolute;
+	clip: rect(0 0 0 0);
+}
+
+.distance-xxs {
+	@include distancing-ready;
+	@include distancing(10px);
+}
+
+.distance-xs {
+	@include distancing-ready;
+	@include distancing(15px);
+}
+
+.distance-sm {
+	@include distancing-ready;
+	@include distancing(20px);
+}
+
+.distance-md {
+	@include distancing-ready;
+	@include distancing(30px);
+}
+
+.distance-lg {
+	@include distancing-ready;
+	@include distancing(40px);
+}
+
+.distance-xl {
+	@include distancing-ready;
+	@include distancing(50px);
+}
+
+.distance-xxl {
+	@include distancing-ready;
+	@include distancing(70px);
+}
+
+.distance-t-xxs {
+	@include distancing-ready;
+	@include distancing(10px, top);
+}
+
+.distance-t-xs {
+	@include distancing-ready;
+	@include distancing(15px, top);
+}
+
+.distance-t-sm {
+	@include distancing-ready;
+	@include distancing(20px, top);
+}
+
+.distance-t-md {
+	@include distancing-ready;
+	@include distancing(30px, top);
+}
+
+.distance-t-lg {
+	@include distancing-ready;
+	@include distancing(40px, top);
+}
+
+.distance-t-xl {
+	@include distancing-ready;
+	@include distancing(50px, top);
+}
+
+.distance-t-xxl {
+	@include distancing-ready;
+	@include distancing(70px, top);
+}
+
+.distance-b-xxs {
+	@include distancing-ready;
+	@include distancing(10px, bottom);
+}
+
+.distance-b-xs {
+	@include distancing-ready;
+	@include distancing(15px, bottom);
+}
+
+.distance-b-sm {
+	@include distancing-ready;
+	@include distancing(20px, bottom);
+}
+
+.distance-b-md {
+	@include distancing-ready;
+	@include distancing(30px, bottom);
+}
+
+.distance-b-lg {
+	@include distancing-ready;
+	@include distancing(40px, bottom);
+}
+
+.distance-b-xl {
+	@include distancing-ready;
+	@include distancing(50px, bottom);
+}
+
+.distance-b-xxl {
+	@include distancing-ready;
+	@include distancing(70px, bottom);
+}

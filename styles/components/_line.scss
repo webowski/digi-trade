@@ -1,0 +1,48 @@
+.line {
+	@include distancing-ready;
+	border: solid $border;
+	border-width: 1px 0 0;
+	height: 0;
+	margin-left: 0;
+	margin-right: 0;
+
+	&.color-inverse {
+		border-color: $white;
+	}
+
+	&.color-accent {
+		border-color: $accent;
+	}
+
+	&.color-minor {
+		border-color: $minor;
+	}
+}
+
+.line-bold {
+	border-top-width: 2px;
+}
+
+.line-bolder {
+	border-top-width: 3px;
+}
+
+.line-sm {
+	max-width: 150px;
+}
+
+.line-md {
+	max-width: 580px;
+}
+
+.line-distance-xs {
+	@include distancing(12px);
+}
+
+.line-distance-sm {
+	@include distancing(18px);
+}
+
+.line-distance-lg {
+	@include distancing(45px);
+}

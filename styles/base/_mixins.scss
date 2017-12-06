@@ -1,0 +1,119 @@
+// distancing from the neighbor block
+@mixin distancing($margin, $side: both, $selector: '*') {
+
+	@each $s in $selector {
+		@if $side == bottom {
+			// bottom side
+
+			& + #{$s} {
+				margin-top: $margin;
+			}
+
+		} @elseif $side == top {
+			// top side
+
+			#{$s} + & {
+				margin-top: $margin;
+			}
+
+		} @else {
+			// both sides
+
+			& + #{$s} {
+				margin-top: $margin;
+			}
+
+			#{$s} + & {
+				margin-top: $margin;
+			}
+
+		}
+	}
+
+}
+
+@mixin distancing-ready() {
+	& {
+		margin-bottom: 0 !important;
+	}
+
+	&:first-child {
+		margin-top: 0;
+	}
+}
+
+
+// bg image ready
+@mixin bg-ready($size: cover, $position: 50%, $repeat: no-repeat) {
+	background-repeat: $repeat;
+	background-position: $position;
+	background-size: $size;
+}
+
+@mixin clearfix() {
+	&:before,
+	&:after {
+		display: block;
+		content: '\a0';
+		clear: both;
+		height: 0;
+		line-height: 0;
+		font-size: 0;
+		visibility: hidden;
+	}
+}
+
+@mixin link-reset(){
+	border-bottom: 0 none;
+	text-decoration: none;
+}
+
+@mixin pseudo-block($width: auto, $height: $width) {
+	width: $width;
+	height: $height;
+	content: '';
+	display: block;
+	position: absolute;
+}
+
+@mixin list-reset( $removeMargins: false ){
+	padding-left: 0;
+	list-style-type: none;
+	margin-bottom: 0;
+
+	@if $removeMargins == true { 
+		margin-top: 0;
+	} 
+
+	> li {
+		margin-bottom: 0;
+		padding-left: 0;
+		margin-left: 0;
+		
+		+ li {
+			margin-top: 0;
+		}
+
+		&:before{
+			display: none;
+		}
+	}
+}
+
+@mixin placeholder {
+	&.placeholder { 
+		@content; 
+	}
+	&:-ms-input-placeholder { 
+		@content; 
+	}
+	&:-moz-placeholder { 
+		@content; 
+	}
+	&::-moz-placeholder { 
+		@content; 
+	}
+	&::-webkit-input-placeholder { 
+		@content; 
+	}
+}

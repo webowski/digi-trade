@@ -1,0 +1,584 @@
+$link-color: 						$brand;
+$heading-color:					$brand;
+
+
+::selection {
+	background-color: $yellow;
+	color: $white;
+}
+
+a {
+	color: $link-color;
+	text-decoration: none;
+	border-bottom: 1px solid;
+	transition: color .2s ease, border-color .2s ease, background-color .2s ease;
+
+	&:hover {
+		color: $link-color;
+		text-decoration: none;
+		border-bottom-color: transparent;
+	}
+
+	&:focus {
+		outline: none;
+	}
+	
+	// email
+	&[href^=mailto] {
+		border-bottom-color: transparent;
+
+		&:hover {
+			
+		}
+	}
+
+	// phone number
+	&[href^=tel] {
+		@include link-reset;
+		white-space: nowrap;
+
+		&:hover {
+			
+		}
+	}
+
+}
+
+p {
+	@include distancing-ready;
+	@include distancing(16px);
+}
+
+h1, h2, h3, h4, h5, h6,
+.h1, .h2, .h3, .h4, .h5, .h6 {
+	@include distancing-ready;
+	color: $heading-color;
+	font-weight: bold;
+}
+
+h1, .h1 {
+	@include distancing(45px !important, top);
+	@include distancing(35px, bottom);
+	color: $white;
+	font-size: 28px;
+	line-height: 36px;
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		font-size: 55px;
+		line-height: 65px;
+	}
+
+	// screen lg up
+	@include media-breakpoint-up(lg) {
+		font-size: 70px;
+		line-height: 78px;
+	}
+}
+
+h2, .h2 {
+	font-size: 28px;
+	line-height: 36px;
+	@include distancing(45px !important, top);
+	@include distancing(35px, bottom);
+	
+	// screen md up
+	@include media-breakpoint-up(md) {
+		font-size: 42px;
+		line-height: 48px;
+	}
+}
+
+h3, .h3 {
+	font-size: 20px;
+	line-height: 28px;
+	@include distancing(36px !important, top);
+	@include distancing(24px, bottom);
+	
+	// screen md up
+	@include media-breakpoint-up(md) {
+		font-size: 30px;
+		line-height: 34px;
+	}
+}
+
+h4, .h4 {
+	font-size: 24px;
+	line-height: 28px;
+	@include distancing(32px !important, top);
+	@include distancing(26px, bottom);
+}
+
+h5, .h5 {
+	font-size: 20px;
+	line-height: 26px;
+	@include distancing(24px !important, top);
+	@include distancing(18px, bottom);
+}
+
+h6, .h6 {
+	font-size: $base-font-size;
+	line-height: $base-line-height - 2px;
+	@include distancing(30px !important, top);
+	@include distancing(10px, bottom);
+}
+
+.heading-line {
+	@include distancing-ready;
+	@include distancing(32px)
+	padding-bottom: 10px;
+	border-bottom: 2px solid $black;
+
+	&.colors-inverse {
+		border-bottom-color: $white;
+	}
+}
+
+.text-xs {
+	font-size: 12px;
+	line-height: 20px;
+}
+
+.text-sm {
+	font-size: 14px;
+	line-height: 20px;
+}
+
+.text-lg {
+	font-size: 18px;
+	line-height: 25px;
+}
+
+.text-xl {
+	font-size: 20px;
+	line-height: 25px;
+	
+	// screen md up
+	@include media-breakpoint-up(md) {
+		font-size: 24px;
+		line-height: 30px;
+	}
+}
+
+.text-xxl {
+	font-size: 28px;
+	line-height: 32px;
+}
+
+.text-xxxl {
+	font-size: 38px;
+	line-height: 42px;
+}
+
+.text-4xl {
+	font-size: 36px;
+	line-height: 44px;
+	
+	// screen md up
+	@include media-breakpoint-up(md) {
+		font-size: 48px;
+		line-height: 56px;
+	}
+}
+
+.text-5xl {
+	font-size: 40px;
+	line-height: 50px;
+	
+	// screen md up
+	@include media-breakpoint-up(md) {
+		font-size: 56px;
+		line-height: 66px;
+	}
+}
+
+.text-10xl {
+	font-size: 150px;
+	line-height: 170px;
+	
+	// screen md up
+	@include media-breakpoint-up(md) {
+		font-size: 150px;
+		line-height: 170px;
+	}
+}
+
+.color-major {
+	color: $major;
+}
+
+.color-minor {
+	color: $minor;
+}
+
+.color-muted {
+	color: $muted;
+}
+
+.color-brand {
+	color: $brand;
+}
+
+.color-accent {
+	color: $accent;
+}
+
+.color-intense {
+	color: $intense;
+}
+
+.color-inverse {
+	color: $white !important;
+}
+
+.color-white {
+	color: $white !important;
+}
+
+.color-inverse-minor {
+	color: rgba($white, .65);
+}
+
+a.color-inverse {
+	color: $yellow !important;
+}
+
+.font-light,
+.text-light {
+	font-weight: 300;
+}
+
+.font-normal,
+.text-normal {
+	font-weight: 400;
+}
+
+.font-medium,
+.text-medium {
+	font-weight: 500;
+}
+
+.font-bold,
+.text-bold {
+	font-weight: 700;
+}
+
+.text-upper {
+	text-transform: uppercase;
+}
+
+.text-middle {
+	vertical-align: middle;
+}
+
+.no-wrap {
+	white-space: nowrap;
+}
+
+.letter-spacing-1 {
+	letter-spacing: 1px;
+}
+
+ol {
+	@include list-reset;
+}
+
+.ordered-list {
+	counter-reset: steps-counter;
+	
+	> li {
+		position: relative;
+		padding-left: 52px;
+
+		&:before {
+			width: 36px;
+			height: 36px;
+			padding-top: 8px;
+			display: block;
+			content: counter(steps-counter);
+			counter-increment: steps-counter;
+			position: absolute;
+			top: 50%;
+			left: 0;
+			transform: translateY(-50%);
+			background-color: $brand;
+			border-radius: 36px;
+			text-align: center;
+			color: $white;
+			font-size: 1.8rem;
+			line-height: 2rem;
+			font-weight: bold;
+		}
+
+		+ li {
+			margin-top: 31px;
+		}
+	}
+
+	&._accent {
+		> li:before {
+			background-color: $accent;
+		}
+	}
+}
+
+.colors-inverse {
+	color: $white;
+
+	&:hover {
+		color: $white;
+	}
+
+	.icon,
+	.icon-n-text > .icon {
+		fill: $white;
+	}
+
+	.button > .icon,
+	.button > .icon-n-text > .icon {
+		fill: inherit;
+	}
+
+	a:not(.button):not(.icon-n-text),{
+		color: $accent;
+		fill: $white;
+
+		&:hover {
+			color: $accent;
+		}
+	}
+
+	a.icon-n-text {
+
+		&:hover {
+			color: $white;
+
+			.text {
+				border-bottom-color: $white;
+			}
+		}
+	}
+
+	*:not(.button) > .icon-n-text {
+		fill: $white;
+
+		a:not([href^=mailto]) {
+			border-bottom-color: $white;
+
+			&:hover {
+				border-bottom-color: transparent;
+			}
+		}
+	}
+
+	a[href^=mailto] {
+		&:hover {
+			border-bottom-color: transparent;
+		}
+	}
+
+	.form-label {
+		color: $white;
+	}
+
+	h1, h2, h3, h4, h5, h6,
+	.h1, .h2, .h3, .h4, .h5, .h6 {
+		color: $white;
+	}
+
+	hr {
+		background-color: $white;
+	}
+
+	.color-minor {
+		color: rgba($white, .75);
+	}
+}
+
+ul {
+	@include list-reset;
+	@include distancing-ready;
+	@include distancing(38px);
+
+	li {
+		position: relative;
+		padding-left: 36px;
+
+		&:before {
+			@include pseudo-block(14px);
+			top: .32em;
+			left: 0;
+			border-radius: 14px;
+			background-color: $yellow;
+		}
+	}
+
+	li + li {
+		margin-top: 22px;
+	}
+}
+
+.list-not-marked {
+	@include list-reset;
+	@include distancing(16px);
+
+	li + li {
+		margin-top: 10px;
+	}
+}
+
+.list-ordered-custom {
+	counter-reset: steps-counter;
+	
+	> li {
+		position: relative;
+		padding-left: 52px;
+
+		&:before {
+			width: 32px;
+			height: 32px;
+			padding-top: 6px;
+			display: block;
+			content: counter(steps-counter);
+			counter-increment: steps-counter;
+			position: absolute;
+			top: 4px;
+			left: 0;
+			// transform: translateY(-50%);
+			background-color: $white;
+			border-radius: 36px;
+			text-align: center;
+			color: $black;
+			font-size: 18px;
+			line-height: 20px;
+			font-weight: bold;
+		}
+
+		+ li {
+			margin-top: 31px;
+		}
+	}
+}
+
+.cite {
+	@include distancing-ready;
+	@include distancing(42px);
+	margin-left: 0;
+	margin-right: 0;
+
+	&__body {
+		position: relative;
+		border-left: 3px solid $yellow;
+		padding-left: 25px;
+		font-size: 16px;
+		line-height: 26px;
+	}
+
+	.icon-quote {
+		display: none;
+		position: absolute;
+		width: 18px;
+		height: 16px;
+
+		&:first-child {
+			top: 2px;
+			left: 30px;
+		}
+
+		&:last-child {
+			bottom: 0;
+			right: 00px;
+			transform: rotate(180deg);
+		}
+	}
+
+	&__footer {
+		margin-top: 40px;
+		display: flex;
+		align-items: center;
+		text-transform: uppercase;
+
+		img {
+			width: 48px;
+			height: 48px;
+			border-radius: 48px;
+		}
+
+		p {
+			margin-left: 32px;
+			margin-top: 0;
+			font-size: 12px;
+			line-height: 20px;
+		}
+
+	}
+	
+	// screen md up
+	@include media-breakpoint-up(md) {
+
+		&__body {
+			padding-left: 77px;
+			font-size: 18px;
+			line-height: 30px;
+		}
+		
+		&__footer {
+			margin-top: 48px;
+		}
+
+		.icon-quote {
+			display: block;
+		}
+	}
+
+}
+
+.cite__right {
+
+	.icon-quote {
+		fill: rgba(#555365, .35);
+		display: block;
+
+		&:first-child {
+			left: 2px;
+			top: 4px;
+		}
+
+		&:last-child {
+			right: 2px;
+		}
+	}
+
+	.cite__body {
+		text-align: right;
+		padding-right: 24px;
+		padding-left: 0;
+		border-left: 0;
+		border-right: 3px solid $yellow;
+	}
+
+	.cite__text {
+		position: relative;
+		display: inline-block;
+		padding-left: 40px;
+		padding-right: 40px;
+
+		.icon-quote:first-child {
+			top: 0px;
+		}
+	}
+
+	.cite__footer {
+		margin-top: 20px;
+		padding-right: 40px;
+		justify-content: flex-end;
+	}
+}
+
+.line-height-md {
+	line-height: 1.45;
+}
+
+.line-height-lg {
+	line-height: 1.7;
+}

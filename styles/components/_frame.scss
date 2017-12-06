@@ -1,0 +1,343 @@
+.frame {
+	@include distancing(25px);
+	position: relative;
+	z-index: 2;
+	margin-left: auto;
+	margin-right: auto;
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		@include distancing(30px);
+	}
+
+	// screen lg up
+	@include media-breakpoint-up(lg) {
+		@include distancing(50px);
+	}
+
+}
+
+.frame-wrap--indent {
+	padding-top: 100px;
+}
+
+.frame__device {
+	@include bg-ready(contain, 50% 0);
+	position: relative;
+	z-index: 1;
+}
+
+.frame__device-front {
+	@include bg-ready(contain);
+	position: relative;
+	z-index: 1;
+}
+
+.frame__screen {
+	@include bg-ready(contain);
+	position: absolute;
+	z-index: 1;
+	overflow: hidden;
+
+	img {
+		display: block;
+	}
+}
+
+.frame--laptop {
+	width: 310px;
+
+	.frame__device {
+		width: 310px;
+		height: 184px;
+		background-image: url(../images/laptop.png);
+	}
+	
+	.frame__screen {
+		width: 234px;
+		height: 146px;
+		top: 11px;
+		left: 38px;
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		width: 712px;
+
+		.frame__device {
+			width: 712px;
+			height: 420px;
+			background-image: url(../images/laptop.png);
+		}
+		
+		.frame__screen {
+			width: 534px;
+			height: 334px;
+			top: 27px;
+			left: 89px;
+		}
+	}
+
+	// screen lg up
+	@include media-breakpoint-up(lg) {
+
+	}
+
+	// screen xl up
+	@include media-breakpoint-up(xl) {
+
+	}
+}
+
+.frame--laptop-hero {
+	margin-top: 0 !important;
+	position: absolute;
+	top: 50%;
+	left: calc(50%);
+	transform: translate(18%, -50%);
+
+	& + * {
+		margin-bottom: 0 !important;
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		top: 118px;
+		right: -200px;
+		left: auto;
+		transform: translate(0, -50%) scale(.58);
+	}
+
+	// screen lg up
+	@include media-breakpoint-up(lg) {
+		top: 115px;
+		right: -140px;
+		transform: translate(0, -50%) scale(.6);
+	}
+
+	// screen xl up
+	@include media-breakpoint-up(xl) {
+		top: 50%;
+		right: -260px;
+		transform: translate(0, -50%) scale(.96);
+	}
+}
+
+.frame--scroll {
+	.frame__screen {
+		overflow-y: scroll;
+	}
+}
+
+.frame--phone {
+	width: 300px;
+	margin-left: auto;
+	margin-right: auto;
+	margin-top: -10px;
+
+	.frame__device {
+		width: 300px;
+		height: 590px;
+		background-image: url(../images/phone.png);
+		z-index: 3;
+		@include bg-ready(contain, 50% 0);
+	}
+	
+	.frame__screen {
+    top: 26px;
+    left: 26px;
+    width: 248px;
+    height: 534px;
+		z-index: 2;
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		width: 388px;
+		margin-top: -10px;
+
+		.frame__device {
+			width: 388px;
+			height: 760px;
+			background-image: url(../images/phone.png);
+			z-index: 3;
+			@include bg-ready(contain, 50% 0);
+		}
+		
+		.frame__screen {
+			top: 34px;
+			left: 34px;
+			width: 320px;
+			height: 691px;
+			z-index: 2;
+		}
+	}
+
+	// screen lg up
+	@include media-breakpoint-up(lg) {
+
+	}
+
+	// screen xl up
+	@include media-breakpoint-up(xl) {
+
+	}
+}
+
+.frame-browser {
+	box-shadow: 0 25px 70px rgba(0,10,70,.28);
+	border-radius: 3px;
+
+	&__header {
+		padding: 16px 40px 16px 72px;
+		background-color: #e8e8e8;
+		border-top-left-radius: 3px;
+		border-top-right-radius: 3px;
+		position: relative;
+	}
+
+	&__url {
+		position: relative;
+		padding: 4px 10px 4px 36px;
+		background-color: $white;
+		border-radius: 2px;
+		color: rgba($intense, .55);
+		font-size: 13px;
+		line-height: 16px;
+		overflow: hidden;
+		text-overflow: ellipsis;
+	}
+
+	.icon {
+		width: 16px;
+		height: 16px;
+		position: absolute;
+	}
+
+	.icon-refresh {
+		top: 4px;
+		left: 12px;
+	}
+
+	.icon-browser-menu {
+		right: 12px;
+		top: 20px;
+	}
+
+	img {
+		display: block;
+		border-bottom-left-radius: 3px;
+		border-bottom-right-radius: 3px;
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		box-shadow: 0 35px 100px rgba(0,10,70,.28);
+		
+	}
+
+	// screen lg up
+	@include media-breakpoint-up(lg) {
+		box-shadow: 0 40px 120px rgba(0,10,70,.28);
+	}
+
+}
+
+.frame-browser--mobile {
+	max-width: 320px;
+	max-height: 1400px;
+	overflow: hidden;
+
+	.frame-browser__header {
+		padding: 16px 20px 16px 20px;
+	}
+	
+	&:after {
+		@include pseudo-block(100%, 150px);
+		background-image: linear-gradient(to bottom, transparent 0%, rgba($white, .4) 50%, $white 100%);
+		bottom: 0;
+		left: 0;
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		max-height: 2128px;
+	}
+
+	// screen lg up
+	@include media-breakpoint-up(lg) {
+		max-height: 2748px;
+	}
+
+	// screen xl up
+	@include media-breakpoint-up(xl) {
+		max-height: 3454px;
+	}
+}
+
+.frame--phone-2 {
+	perspective: 2000px;
+	perspective-origin: 50% 50%;
+	width: 260px;
+	height: 210px;
+
+	.frame__device {
+		width: 100%;
+		height: 100%;
+		background-image: url(../images/phone-2.png);
+	}
+
+	.frame__screen {
+		width: 320px;
+		height: 520px;
+		@include bg-ready(100% auto, 50% 0);
+		transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg);
+		// width: 180px;
+  //   height: 360px;
+  //   background-repeat: no-repeat;
+  //   background-position: 50% 0;
+  //   background-size: 100% auto;
+  //   -webkit-transform: rotateX(10deg) rotateY(0deg) rotateZ(0deg);
+  //   transform: rotateX(41deg) rotateY(10deg) rotateZ(-49deg);
+  //   opacity: .7;
+  //   top: 37px;
+  //   left: 193px;
+
+	}
+
+	// screen sm up
+	@include media-breakpoint-up(sm) {
+		width: 320px;
+		height: 240px;
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		width: 575px;
+		height: 430px;
+	}
+}
+
+.frame--phone-2-hero {
+	margin: 0px 0px -0px -190px;
+
+	// screen sm up
+	@include media-breakpoint-up(sm) {
+		margin: 0px 0 -10px -240px;
+	}
+
+	// screen md up
+	@include media-breakpoint-up(md) {
+		margin: 0px 0px -60px -320px;
+	}
+
+	// screen lg up
+	@include media-breakpoint-up(lg) {
+		margin: 0px 0px -60px -350px;
+	}
+
+	// screen xl up
+	@include media-breakpoint-up(xl) {
+		margin: 0px 0px -70px -320px;
+	}
+}

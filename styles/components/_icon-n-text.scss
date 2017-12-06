@@ -1,0 +1,109 @@
+.icon-n-text {
+	display: inline-flex;
+	align-items: center;
+
+	.icon {
+		transition: fill .2s ease, stroke .2s ease;
+	}
+	
+	.icon,
+	.icon-round {
+		flex-shrink: 0;
+	}
+
+	.text {
+		transition: border-color .2s ease, color .2s ease;
+	}
+
+	[class^=icon] + .text,
+	.text + [class^=icon] {
+		margin-left: 12px;
+	}
+
+	&--sm {
+		font-size: 12px;
+		line-height: 18px;
+
+		[class^=icon] + .text,
+		.text + [class^=icon] {
+			margin-left: 8px;
+		}
+	}
+
+	a {
+		color: inherit;
+		border-color: transparent;
+	}
+
+}
+
+.icon-n-text.vertical {
+	flex-direction: column;
+
+	[class^=icon] + .text,
+	.text + [class^=icon] {
+		margin-top: 16px;
+		margin-left: 0 !important;
+	}
+}
+
+.icon-n-text--lg {
+	[class^=icon] + .text,
+	.text + [class^=icon] {
+		margin-left: 20px;
+	}
+}
+
+.icon-n-text.colors-inverse {
+	.text {
+		color: $white;
+	}
+
+	.icon {
+		fill: $white;
+	}
+
+	&:hover {
+		.text {
+			color: $yellow;
+		}
+
+		.icon {
+			fill: $yellow;
+		}
+	}
+}
+
+a.icon-n-text {
+	@include link-reset;
+	transition: none;
+
+	&:hover {
+		color: $yellow !important;
+
+		.icon {
+			fill: $yellow;
+		}
+
+	}
+
+	.text {
+		margin-bottom: -1px;
+	}
+}
+
+div.icon-n-text {
+	display: flex;
+}
+
+// .icon-n-text--special {
+	
+// 	&:hover {
+// 		.icon {
+// 			fill: $yellow !important;
+// 		}
+// 		.text {
+// 			color: ;
+// 		}
+// 	}
+// }

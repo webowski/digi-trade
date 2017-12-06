@@ -1,0 +1,64 @@
+.circle-diagram {
+	width: 300px;
+	height: 300px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	position: relative;
+
+	&:before {
+		@include pseudo-block(288px);
+		top: 6px;
+		right: 6px;
+		border-radius: 296px;
+		border: 8px solid ;
+	}
+
+	&__value {
+		font-size: 55px;
+		line-height: 55px;
+		font-weight: 300;
+	}
+
+	&__point {
+		position: absolute;
+		top: 0px;
+		left: 150px;	
+		width: 22px;
+		height: 22px;
+		border: 5px solid;
+		border-radius: 22px;
+		transform-origin: 0 150px;
+		background-color: $white;
+	}
+
+	&.color-danger {
+		
+		&:before,
+		.circle-diagram__point {
+			border-color: #ff0000;
+		}
+
+		.circle-diagram__value {
+			color: #ff0000;
+		}
+
+	}
+
+	&.color-inverse {
+		
+		&:before,
+		.circle-diagram__point {
+			border-color: $white;
+		}
+
+		.circle-diagram__value {
+			color: $white;
+		}
+
+		.circle-diagram__point {
+			background-color: #3e5498;
+		}
+
+	}
+}

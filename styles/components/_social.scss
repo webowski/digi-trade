@@ -1,0 +1,86 @@
+.sharing {
+	cursor: default;
+
+	&__title {
+		margin-bottom: 16px;
+		font-size: 14px;
+		line-height: 20px;
+		color: $intense;
+	}
+
+	ul {
+		@include list-reset(true);
+	}
+
+	.ya-share2__list {
+		display: block !important;
+		cursor: default;
+	}
+
+	.ya-share2__link {
+		@include link-reset;
+		display: flex !important;
+		align-items: center;
+		border-radius: 2px;
+	}
+
+	.ya-share2__badge {
+		padding: 1px;
+		border-right: 1px solid rgba($white, .2);
+	}
+
+	.ya-share2__icon {
+		width: 28px !important;
+		height: 28px !important;
+	}
+
+	.ya-share2__item {
+		display: block !important;
+		margin: 0 !important;
+
+		+ .ya-share2__item {
+			margin-top: 16px !important;
+		}
+
+		&_service_vkontakte {
+			.ya-share2__link {
+				background-color: #48729e;
+			}
+		}
+
+		&_service_facebook {
+			.ya-share2__link {
+				background-color: #3b5998;
+			}
+		}
+
+		&_service_gplus {
+			.ya-share2__link {
+				background-color: #dc4e41;
+			}
+		}
+
+		&_service_whatsapp {
+			.ya-share2__link {
+				background-color: #65bc54;
+			}
+		}
+	}
+
+	.ya-share2__title {
+		margin-left: 8px;
+		margin-right: 28px;
+		display: block !important;
+		color: $white;
+		flex: 1 0 auto;
+		text-align: center;
+
+		&:hover {
+			color: $white;
+		}
+	}
+}
+
+.sharing-button {
+	border-radius: 2px;
+}
