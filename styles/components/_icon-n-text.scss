@@ -62,16 +62,6 @@
 	.icon {
 		fill: $white;
 	}
-
-	&:hover {
-		.text {
-			color: $yellow;
-		}
-
-		.icon {
-			fill: $yellow;
-		}
-	}
 }
 
 a.icon-n-text {
@@ -79,16 +69,32 @@ a.icon-n-text {
 	transition: none;
 
 	&:hover {
+		color: $yellow;
+
+		.icon {
+			fill: $yellow;
+		}
+	}
+
+	.text {
+		margin-bottom: -1px;
+	}
+}
+
+a.icon-n-text.color-inverse,
+a.icon-n-text.colors-inverse {
+	color: $white !important;
+
+	.icon {
+		fill: $white;
+	}
+
+	&:hover {
 		color: $yellow !important;
 
 		.icon {
 			fill: $yellow;
 		}
-
-	}
-
-	.text {
-		margin-bottom: -1px;
 	}
 }
 

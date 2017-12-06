@@ -181,25 +181,17 @@ $button-border-radius: 									$border-radius;
 	color: $button-inverse-text-color;
 
 	&:hover {
-		background-color: $button-inverse-color;
-		border-color: $button-inverse-color;
-		color: $button-inverse-text-color;
-	}
-
-	background-image: linear-gradient(-45deg, 
-		lighten($red, 11) 0%,
-	  lighten($white, 11) 33.33%, 
-	  transparent 66.66%, 
-	  transparent 100%
-	);
-	background-size: 300% 300%;
-	background-position: 0% 0%;
-
-	&:hover {
+		transform: scale(1.025);
+		box-shadow: 0 35px 40px rgba(0, 0, 0, 0.15);
 		background-color: $button-inverse-color;
 		color: $button-accent-text-color;
-		background-position: 100% 100%;
 	}
+
+	&:active {
+		box-shadow: 0 25px 32px rgba(0, 0, 0, 0.15);
+		transform: translateY(4px);
+	}
+
 }
 
 .button-gradient {

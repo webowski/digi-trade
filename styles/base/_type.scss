@@ -348,17 +348,6 @@ ol {
 		}
 	}
 
-	a.icon-n-text {
-
-		&:hover {
-			color: $white;
-
-			.text {
-				border-bottom-color: $white;
-			}
-		}
-	}
-
 	*:not(.button) > .icon-n-text {
 		fill: $white;
 
