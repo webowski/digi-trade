@@ -67,8 +67,7 @@ jQuery(document).ready(function($) {
 
 	var demo = Sketch.create({
 		container: document.getElementById('particles'),
-		retina: 'auto',
-		height: $scene.height()
+		retina: 'auto'
 	});
 
 	demo.setup = function() {
@@ -140,11 +139,6 @@ jQuery(document).ready(function($) {
 			}
 
 		}
-	};
-
-	demo.resize = function() {
-
-		demo.height = $scene.height();
 	};
 
 
