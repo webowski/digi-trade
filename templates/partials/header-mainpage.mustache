@@ -1,9 +1,10 @@
 {{> head}}
 
 		<header class="site-header site-header--mainpage" role="banner">
-			<canvas class="parallax-canvas"></canvas>
+			
+			<div class="effect-scene" id="particles"></div>
+			
 			<div class="container">
-
 				
 				{{> header__inner}}
 
@@ -66,18 +67,6 @@
 
 			</div>
 
-			<nav class="nav-mobile">
-				<div class="container">
-
-					<ul>
-						<li><a href="">О нас</a></li>
-						<li><a href="">Услуги и цены</a></li>
-						<li><a href="">Портфолио</a></li>
-						<li><a href="">Блог</a></li>
-						<li><a href="">Контакты</a></li>
-					</ul>
-
-				</div>
-			</nav>
+			{{> nav-mobile}}
 
 		</header>

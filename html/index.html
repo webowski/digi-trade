@@ -10,9 +10,10 @@
 	<div class="wrap">
 		
 		<header class="site-header site-header--mainpage" role="banner">
-			<canvas class="parallax-canvas"></canvas>
+			
+			<div class="effect-scene" id="particles"></div>
+			
 			<div class="container">
-
 				
 				<div class="row  justify-content-between  align-items-center">
 					<div class="col-auto  mb-md-2 mb-lg-0">
@@ -100,6 +101,9 @@
 							<svg class="icon icon-menu">
 								<use xlink:href="../images/icons-vector.svg#menu"></use>
 							</svg>
+							<svg class="icon icon-menu-close">
+								<use xlink:href="../images/icons-vector.svg#menu-close"></use>
+							</svg>
 						</a>
 
 					</div>
@@ -173,6 +177,12 @@
 						<li><a href="">Блог</a></li>
 						<li><a href="">Контакты</a></li>
 					</ul>
+
+					<div class="nav-mobile__phone text-xl"><a href="tel:+74993941696" class="color-white">8 499 394-16-96</a></div>
+
+					<a href="" class="button button-lg button-accent button-block">ЗАКАЗАТЬ ЗВОНОК</a>
+
+					<a href="" class="button button-lg button-gradient button-block">ОСТАВИТЬ ЗАЯВКУ НА РАЗРАБОТКУ</a>
 
 				</div>
 			</nav>
@@ -1685,6 +1695,7 @@
 	<script src="../lib/magnific-popup/dist/jquery.magnific-popup.min.js"></script>
 	<script src="../lib/textarea-autosize/dist/jquery.textarea_autosize.min.js"></script>
 	<script src="../lib/jquery-form-validator/form-validator/jquery.form-validator.min.js"></script>
-	<!-- <script src="../scripts/parallax-effect.js"></script> -->
+	<script src="../lib/sketch.js/js/sketch.min.js"></script>
+	<script src="../scripts/particles.js"></script>
 	<script src="../scripts/main.js"></script></body>
 </html>

@@ -24,7 +24,8 @@
     "magnific-popup": "^1.1.0",
     "jquery-form-validator": "^2.3.77",
     "bootstrap": "4.0.0-beta",
-    "textarea-autosize": "^0.4.2"
+    "textarea-autosize": "^0.4.2",
+    "sketch.js": "*"
   },
   "resolutions": {
     "jquery": "^3.2.1"

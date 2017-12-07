@@ -22,34 +22,16 @@ body {
 	background-color: $white;
 	color: $intense;
 
-	.parallax-canvas {
-		position: absolute;
-		top: 0;
-		left: 50%;
-		width: 1600px;
-		height: 100%;
-		transform: translate(-50%, 0);
-		opacity: .55;
-	}
-
 	// screen md up
 	@include media-breakpoint-up(md) {
 		padding-top: 24px;
 		padding-bottom: 18px;
-
-		.parallax-canvas {
-			width: 1900px;
-		}
 	}
 
 	// screen lg up
 	@include media-breakpoint-up(lg) {
 		padding-top: 38px;
 		padding-bottom: 38px;
-
-		.parallax-canvas {
-			width: 2200px;
-		}
 	}
 }
 
@@ -157,44 +139,62 @@ body {
 
 .nav-mobile-opener {
 	@include link-reset;
+	width: 32px;
+	height: 32px;
 	display: block;
 	fill: $black;
 	text-align: center;
 	cursor: pointer;
 	position: relative;
-	z-index: 10;
+	z-index: 100;
+	transition: transform .4s ease;
 
-	.icon-menu {
-		width: 32px;
-		height: 32px;
+	.icon-menu,
+	.icon-menu-close {
 		display: block;
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		transition: visibility 0s ease .1s;
 	}
 
-	&:hover > .icon {
-		fill: $yellow;
+	.icon-menu-close {
+		visibility: hidden;
+	}
+
+	&.is-open {
+		transform: rotateY(180deg);
+
+		.icon-menu {
+			transition: visibility 0s ease .1s;
+			visibility: hidden;
+		}
+
+		.icon-menu-close {
+			transition: visibility 0s ease .1s;
+			visibility: visible;
+		}
 	}
 
 	// screen md up
 	@include media-breakpoint-up(md) {
-
-		.icon-menu {
-			width: 45px;
-			height: 45px;
-		}
-
+		width: 45px;
+		height: 45px;
 	}
 
 }
 
 .nav-mobile {
 	padding-top: 24px;
-	padding-bottom: 24px;
+	padding-bottom: $grid-gutter-width / 2;
 	color: $white;
-	font-size: $base-font-size - 2;
-	line-height: $base-line-height - 2;
-	font-weight: 500;
+	font-size: $base-font-size;
+	line-height: $base-line-height;
+	font-weight: bold;
 	text-transform: uppercase;
-	background-image: $gradient;
+	background-color: $black;
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -216,16 +216,26 @@ body {
 		}
 	}
 
+	.nav-mobile__phone {
+		margin-top: 28px;
+	}
+
+	.button {
+		margin-top: 22px;
+
+		+ .button {
+			margin-top: 10px;
+		}
+	}
+
 	&.is-open {
 		transform: translate(0, 0);
 		opacity: 1;
 	}
 
-	// screen md up
-	@include media-breakpoint-up(md) {	
+	// screen lg up
+	@include media-breakpoint-up(lg) {	
 		display: none;
-		font-size: $base-font-size;
-		line-height: $base-line-height;
 	}
 
 }
